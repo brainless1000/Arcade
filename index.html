@@ -3,65 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <title>Arcade MC Network | Indian Minigames Server</title>
-    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: #e5e7eb;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header / Hero */
+        header {
+            background: linear-gradient(135deg, #7c3aed, #2563eb);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .ip-box {
+            margin-top: 25px;
+            display: inline-block;
+            background: rgba(0,0,0,0.3);
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+        }
+
+        .ip-box span {
+            font-weight: 600;
+            color: #facc15;
+        }
+
+        /* Sections */
+        section {
+            padding: 70px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            text-align: center;
+            color: #93c5fd;
+        }
+
+        section p {
+            text-align: center;
+            max-width: 700px;
+            margin: auto;
+            font-size: 1.05rem;
+        }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: #020617;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #f472b6;
+        }
+
+        /* Join Steps */
+        ol {
+            max-width: 600px;
+            margin: auto;
+            margin-top: 30px;
+            font-size: 1.05rem;
+        }
+
+        ol li {
+            margin: 15px 0;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 30px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(34,197,94,0.6);
+        }
+
+        /* Footer */
+        footer {
+            background: #020617;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
 <header>
     <h1>🎮 Arcade MC Network</h1>
     <p>India's Ultimate Minecraft Minigames Server</p>
+
     <div class="ip-box">
         Java IP: <span>arcademc.networkindia.com:25582</span>
     </div>
 </header>
 
-<section class="about">
+<section>
     <h2>About the Server</h2>
     <p>
-        Arcade MC Network is a fast-paced Minecraft Java Edition server focused on
-        <b>pure minigames fun</b>. No survival. No lifesteal. Just action!
+        Arcade MC Network is a high-energy Minecraft Java Edition server
+        dedicated to <b>pure competitive minigames</b>.
+        No survival, no grinding — just instant fun and action!
     </p>
 </section>
 
-<section class="games">
+<section>
     <h2>Game Modes</h2>
-    <ul>
-        <li>⚔️ Capture the Flag</li>
-        <li>🟥 Team Deathmatch</li>
-        <li>🎯 One in the Chamber</li>
-        <li>⚽ Soccer</li>
-        <li>💣 Bowspleef</li>
-        <li>🎉 Block Party</li>
-        <li>🕹️ Paintball</li>
-        <li>🔥 Domination (NEW)</li>
-    </ul>
+    <div class="card-grid">
+        <div class="card"><h3>⚔️ Capture the Flag</h3></div>
+        <div class="card"><h3>🟥 Team Deathmatch</h3></div>
+        <div class="card"><h3>🎯 One in the Chamber</h3></div>
+        <div class="card"><h3>⚽ Soccer</h3></div>
+        <div class="card"><h3>💣 Bowspleef</h3></div>
+        <div class="card"><h3>🎉 Block Party</h3></div>
+        <div class="card"><h3>🕹️ Paintball</h3></div>
+        <div class="card"><h3>🔥 Domination (NEW)</h3></div>
+    </div>
 </section>
 
-<section class="features">
-    <h2>Features</h2>
-    <ul>
-        <li>✅ Lag-free & fast queues</li>
-        <li>✅ Custom ranks & scoreboards</li>
-        <li>✅ Weekly events & giveaways</li>
-        <li>✅ 24/7 uptime</li>
-        <li>✅ Friendly & active staff</li>
-    </ul>
+<section>
+    <h2>Why Play With Us?</h2>
+    <div class="card-grid">
+        <div class="card">✅ Lag-Free Performance</div>
+        <div class="card">✅ Custom Ranks & Stats</div>
+        <div class="card">✅ Weekly Events</div>
+        <div class="card">✅ 24/7 Online</div>
+        <div class="card">✅ Friendly Indian Community</div>
+        <div class="card">✅ Active Staff Team</div>
+    </div>
 </section>
 
-<section class="join">
+<section>
     <h2>How to Join</h2>
     <ol>
-        <li>Open Minecraft Java Edition</li>
-        <li>Go to Multiplayer → Add Server</li>
+        <li>Open <b>Minecraft Java Edition</b></li>
+        <li>Go to <b>Multiplayer → Add Server</b></li>
         <li>Enter IP: <b>arcademc.networkindia.com:25582</b></li>
-        <li>Click Join & have fun!</li>
+        <li>Click Join & start playing 🎉</li>
     </ol>
-</section>
 
-<section class="discord">
-    <h2>Join Our Discord</h2>
-    <a href="https://dsc.gg/arcademcnetwork" target="_blank">🎧 Join Discord</a>
+    <div style="text-align:center;">
+        <a class="btn" href="https://dsc.gg/arcademcnetwork" target="_blank">
+            🎧 Join Our Discord
+        </a>
+    </div>
 </section>
 
 <footer>
