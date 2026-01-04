@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Arcade MC Network | Indian Minigames Server</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Cool Clean Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Oxanium:wght@400;600;700&display=swap" rel="stylesheet">
-
+    <title>FireMC | Official Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-orange: #ff983d;
+            --dark-bg: #121212;
+            --card-bg: #1a1a1a;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -16,210 +19,195 @@
         }
 
         body {
-            background: #0f172a;
-            color: #e5e7eb;
-            line-height: 1.6;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark-bg);
+            color: white;
+            overflow-x: hidden;
+            /* Background image mimic */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1627398242454-45a1465c2479?q=80&w=2000') no-repeat center center fixed;
+            background-size: cover;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #7c3aed, #2563eb);
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            font-family: 'Oxanium', sans-serif;
-            font-size: 3rem;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 25px;
+            font-weight: 700;
             text-transform: uppercase;
+            font-size: 14px;
         }
 
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
+        nav a {
+            color: #ccc;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
         }
 
-        .ip-box {
-            margin-top: 25px;
-            display: inline-block;
-            background: rgba(0,0,0,0.3);
-            padding: 15px 25px;
-            border-radius: 10px;
-            font-size: 1.1rem;
+        nav a:hover {
+            color: white;
         }
 
-        .ip-box span {
-            font-weight: 600;
-            color: #facc15;
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 0 50px;
         }
 
-        /* Sections */
-        section {
-            padding: 70px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        section h2 {
-            font-family: 'Oxanium', sans-serif;
-            font-size: 2.2rem;
-            margin-bottom: 25px;
+        .stats-side {
             text-align: center;
-            color: #93c5fd;
+            flex: 1;
+        }
+
+        .stats-side h2 {
+            color: var(--primary-orange);
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .stats-side p {
+            font-size: 0.9rem;
+            opacity: 0.8;
             letter-spacing: 1px;
         }
 
-        section p {
+        .main-logo-area {
+            flex: 2;
             text-align: center;
-            max-width: 700px;
-            margin: auto;
-            font-size: 1.05rem;
+            position: relative;
         }
 
-        /* Cards */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        /* Floating Island Effect */
+        .logo-img {
+            max-width: 450px;
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* --- BOTTOM LOGIN BAR --- */
+        .login-bar {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.85);
+            width: 80%;
+            max-width: 1000px;
+            padding: 20px 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
             gap: 20px;
-            margin-top: 40px;
+            border-bottom: 4px solid #000;
         }
 
-        .card {
-            background: #020617;
+        .login-bar img {
+            width: 60px;
+        }
+
+        .login-bar-text h3 {
+            font-size: 1.4rem;
+            color: var(--primary-orange);
+        }
+
+        /* --- COOKIE POPUP --- */
+        .cookie-popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #222;
             padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 12px;
+            width: 350px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            font-size: 13px;
+            z-index: 100;
         }
 
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        .cookie-btns {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 15px;
         }
 
-        .card h3 {
-            font-family: 'Oxanium', sans-serif;
-            margin-bottom: 10px;
-            color: #f472b6;
+        .btn-allow {
+            background: var(--primary-orange);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
         }
 
-        /* Join Steps */
-        ol {
-            max-width: 600px;
-            margin: auto;
-            margin-top: 30px;
-            font-size: 1.05rem;
+        .btn-disallow {
+            background: none;
+            border: none;
+            color: #999;
+            cursor: pointer;
         }
 
-        ol li {
-            margin: 15px 0;
-        }
-
-        /* Button */
-        .btn {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 14px 30px;
-            border-radius: 50px;
-            background: linear-gradient(135deg, #22c55e, #16a34a);
-            font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(34,197,94,0.6);
-        }
-
-        /* Footer */
-        footer {
-            background: #020617;
-            text-align: center;
-            padding: 25px;
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 2.2rem;
-            }
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero { flex-direction: column; height: auto; padding-top: 50px; }
+            .login-bar { width: 95%; position: relative; bottom: 0; margin: 50px 0; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>🎮 Arcade MC Network</h1>
-    <p>India's Ultimate Minecraft Minigames Server</p>
+    <nav>
+        <a href="#">🏠 HOME</a>
+        <a href="#">📋 RULES</a>
+        <a href="#">💬 FORUM</a>
+        <a href="#">🗳️ VOTE</a>
+    </nav>
 
-    <div class="ip-box">
-        Java IP: <span>arcademc.networkindia.com:25582</span>
+    <div class="hero">
+        <div class="stats-side">
+            <h2>748 PLAYERS ONLINE</h2>
+            <p>PLAY.FIREMC.FUN</p>
+        </div>
+
+        <div class="main-logo-area">
+            <img src="https://via.placeholder.com/450x300/ff983d/ffffff?text=FireMC+Island+Art" alt="FireMC Logo" class="logo-img">
+        </div>
+
+        <div class="stats-side">
+            <h2>5556 USERS ONLINE</h2>
+            <p>DISCORD.GG/FIREMC</p>
+        </div>
     </div>
-</header>
 
-<section>
-    <h2>About the Server</h2>
-    <p>
-        Arcade MC Network is a high-energy Minecraft Java Edition server
-        dedicated to <b>pure competitive minigames</b>.
-        No survival, no grinding — just instant fun and action!
-    </p>
-</section>
-
-<section>
-    <h2>Game Modes</h2>
-    <div class="card-grid">
-        <div class="card"><h3>⚔️ Capture the Flag</h3></div>
-        <div class="card"><h3>🟥 Team Deathmatch</h3></div>
-        <div class="card"><h3>🎯 One in the Chamber</h3></div>
-        <div class="card"><h3>⚽ Soccer</h3></div>
-        <div class="card"><h3>💣 Bowspleef</h3></div>
-        <div class="card"><h3>🎉 Block Party</h3></div>
-        <div class="card"><h3>🕹️ Paintball</h3></div>
-        <div class="card"><h3>🔥 Domination (NEW)</h3></div>
+    <div class="login-bar">
+        <img src="https://mc-heads.net/avatar/steve" alt="Avatar">
+        <div class="login-bar-text">
+            <h3>Welcome to FireMC Official Website!</h3>
+            <p>To join our community, please login or register!</p>
+        </div>
     </div>
-</section>
 
-<section>
-    <h2>Why Play With Us?</h2>
-    <div class="card-grid">
-        <div class="card">✅ Lag-Free Performance</div>
-        <div class="card">✅ Custom Ranks & Stats</div>
-        <div class="card">✅ Weekly Events</div>
-        <div class="card">✅ 24/7 Online</div>
-        <div class="card">✅ Friendly Indian Community</div>
-        <div class="card">✅ Active Staff Team</div>
+    <div class="cookie-popup">
+        <p>This website uses cookies to enhance your browsing experience. <a href="#" style="color:var(--primary-orange)">More info</a></p>
+        <div class="cookie-btns">
+            <button class="btn-disallow">Disallow cookies</button>
+            <button class="btn-allow">Allow cookies</button>
+        </div>
     </div>
-</section>
-
-<section>
-    <h2>How to Join</h2>
-    <ol>
-        <li>Open <b>Minecraft Java Edition</b></li>
-        <li>Go to <b>Multiplayer → Add Server</b></li>
-        <li>Enter IP: <b>arcademc.networkindia.com:25582</b></li>
-        <li>Click Join & start playing 🎉</li>
-    </ol>
-
-    <div style="text-align:center;">
-        <a class="btn" href="https://dsc.gg/arcademcnetwork" target="_blank">
-            🎧 Join Our Discord
-        </a>
-    </div>
-</section>
-
-<footer>
-    <p>© 2026 Arcade MC Network | Made for Minecraft Players 🇮🇳</p>
-</footer>
 
 </body>
 </html>
