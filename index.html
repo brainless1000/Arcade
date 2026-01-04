@@ -1,224 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arcade MC Network | Official Indian Minigames</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Oxanium:wght@600;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --accent: #ff8c00;
-            --accent-glow: rgba(255, 140, 0, 0.4);
-            --bg-dark: #0a0a0b;
-            --card-bg: #161618;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arcade MC Network | Official Indian Minigames</title>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Oxanium:wght@600;800&display=swap" rel="stylesheet">
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-dark);
-            color: white;
-            overflow-x: hidden;
-            background: radial-gradient(circle at center, #1a1005 0%, #0a0a0b 100%);
-        }
+<style>
+:root {
+    --accent: #ff8c00;
+    --accent-glow: rgba(255,140,0,0.4);
+    --bg-dark: #0a0a0b;
+    --card-bg: #161618;
+}
 
-        /* --- TOP NAV --- */
-        nav {
-            display: flex;
-            justify-content: center;
-            padding: 30px;
-            gap: 40px;
-            font-family: 'Oxanium', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            z-index: 10;
-            position: relative;
-        }
+*{margin:0;padding:0;box-sizing:border-box;}
 
-        nav a { color: #aaa; text-decoration: none; transition: 0.3s; font-size: 14px; }
-        nav a:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent); }
+body{
+    font-family:'Montserrat',sans-serif;
+    background:radial-gradient(circle at center,#1a1005 0%,#0a0a0b 100%);
+    color:white;
+}
 
-        /* --- HERO SECTION --- */
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            min-height: 80vh;
-            padding: 0 5%;
-            position: relative;
-        }
+/* NAV */
+nav{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    padding:30px;
+    font-family:'Oxanium',sans-serif;
+    letter-spacing:2px;
+}
 
-        .side-info {
-            flex: 1;
-            text-align: center;
-            z-index: 5;
-        }
+nav a{
+    color:#aaa;
+    text-decoration:none;
+    transition:0.3s;
+    font-size:14px;
+}
+nav a:hover{
+    color:var(--accent);
+    text-shadow:0 0 10px var(--accent);
+}
 
-        .side-info h2 {
-            font-family: 'Oxanium', sans-serif;
-            font-size: 2.2rem;
-            color: var(--accent);
-            margin-bottom: 5px;
-        }
+/* HERO */
+.hero{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    min-height:80vh;
+    padding:0 5%;
+    position:relative;
+}
 
-        .side-info p {
-            font-size: 12px;
-            letter-spacing: 3px;
-            color: #888;
-            text-transform: uppercase;
-        }
+.side-info{
+    flex:1;
+    text-align:center;
+}
 
-        /* Central Island/Character */
-        .logo-container {
-            flex: 1.5;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-        }
+.side-info h2{
+    font-family:'Oxanium';
+    color:var(--accent);
+    font-size:2.2rem;
+}
+.side-info p{
+    font-size:12px;
+    letter-spacing:3px;
+    color:#888;
+    text-transform:uppercase;
+}
 
-        .floating-island {
-            width: 100%;
-            max-width: 500px;
-            filter: drop-shadow(0 0 30px var(--accent-glow));
-            animation: float 4s ease-in-out infinite;
-        }
+/* LOGO */
+.logo-container{
+    flex:1.5;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
+.floating-island{
+    width:100%;
+    max-width:500px;
+    filter:drop-shadow(0 0 30px var(--accent-glow));
+    animation:float 4s ease-in-out infinite;
+}
 
-        /* --- STATUS BAR --- */
-        .status-bar {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(15, 15, 15, 0.95);
-            width: 90%;
-            max-width: 1100px;
-            padding: 25px 40px;
-            border-radius: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 4px solid var(--accent);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-        }
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-20px);}
+}
 
-        .status-item { display: flex; align-items: center; gap: 15px; }
-        .status-avatar { width: 50px; height: 50px; border-radius: 5px; }
-        
-        .status-text h4 { color: var(--accent); font-size: 1.1rem; }
-        .status-text p { font-size: 0.85rem; color: #bbb; margin-top: 3px; }
+/* STATUS BAR */
+.status-bar{
+    position:absolute;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%);
+    width:90%;
+    max-width:1100px;
+    background:rgba(15,15,15,0.95);
+    padding:25px 40px;
+    border-radius:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:4px solid var(--accent);
+}
 
-        .btn-discord {
-            background: #5865F2;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            transition: 0.3s;
-        }
+.status-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
 
-        .btn-discord:hover { background: #4752c4; transform: scale(1.05); }
+.status-avatar{
+    width:50px;
+    height:50px;
+    border-radius:5px;
+}
 
-        /* --- MINIGAMES SECTION --- */
-        .games-grid {
-            max-width: 1200px;
-            margin: 100px auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 0 20px;
-        }
+.btn-discord{
+    background:#5865F2;
+    color:white;
+    padding:12px 25px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+}
+.btn-discord:hover{
+    background:#4752c4;
+    transform:scale(1.05);
+}
 
-        .game-card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid #222;
-            transition: 0.3s;
-        }
+/* GAMES */
+.games-grid{
+    max-width:1200px;
+    margin:100px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:0 20px;
+}
 
-        .game-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-5px);
-            background: #1c1c1f;
-        }
+.game-card{
+    background:var(--card-bg);
+    padding:30px;
+    border-radius:12px;
+    text-align:center;
+    border:1px solid #222;
+    transition:0.3s;
+}
+.game-card:hover{
+    border-color:var(--accent);
+    transform:translateY(-5px);
+}
+.game-card h3{
+    font-family:'Oxanium';
+    color:var(--accent);
+}
 
-        .game-card h3 { font-family: 'Oxanium', sans-serif; color: var(--accent); margin-bottom: 10px; }
-
-        @media (max-width: 1000px) {
-            .hero { flex-direction: column; text-align: center; padding-top: 50px; }
-            .side-info { margin: 20px 0; }
-            .status-bar { position: relative; bottom: 0; transform: none; left: 0; margin: 20px auto; flex-direction: column; gap: 20px; text-align: center; }
-        }
-    </style>
+/* MOBILE */
+@media(max-width:1000px){
+    .hero{flex-direction:column;padding-top:50px;}
+    .status-bar{position:relative;transform:none;left:0;margin:20px auto;flex-direction:column;gap:20px;}
+}
+</style>
 </head>
+
 <body>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Minigames</a>
-        <a href="#">Leaderboard</a>
-        <a href="#">Store</a>
-        <a href="#">Vote</a>
-    </nav>
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Minigames</a>
+    <a href="#">Leaderboard</a>
+    <a href="#">Store</a>
+    <a href="#">Vote</a>
+</nav>
 
-    <div class="hero">
-        <div class="side-info">
-            <h2>0 / 1000</h2>
-            <p>Players Competing</p>
-        </div>
+<div class="hero">
 
-        <div class="logo-container">
-            <img src="https://i.imgur.com/5Xh9K4Y.png" onerror="this.src='https://via.placeholder.com/500x400/111/ff8c00?text=ARCADE+MC+ISLAND'" class="floating-island" alt="Arcade MC">
-            <h1 style="font-family:'Oxanium'; font-size: 4rem; margin-top: -50px; text-shadow: 0 0 20px #000;">ARCADE MC</h1>
-        </div>
+<div class="side-info">
+    <h2>0 / 1000</h2>
+    <p>Players Competing</p>
+</div>
 
-        <div class="side-info">
-            <h2>1.20.4</h2>
-            <p>Server Version</p>
-        </div>
+<div class="logo-container">
 
-        <div class="status-bar">
-            <div class="status-item">
-                <img src="https://mc-heads.net/avatar/steve" class="status-avatar" alt="User">
-                <div class="status-text">
-                    <h4>Welcome to Arcade MC!</h4>
-                    <p>IP: <b>arcademc.networkindia.com:25582</b></p>
-                </div>
-            </div>
-            
-            <div class="status-item">
-                <div class="status-text" style="text-align: right; margin-right: 20px;">
-                    <p>Server Status: <span style="color: #00ff00;">● ONLINE</span></p>
-                    <p>Last Ping: 4 mins ago</p>
-                </div>
-                <a href="https://dsc.gg/arcademcnetwork" class="btn-discord">JOIN DISCORD</a>
-            </div>
+    <!-- 🔥 IMGR DIRECT IMAGE LINK -->
+    <!-- Replace IMAGE_ID_HERE with your Imgur image ID -->
+    <img 
+      src="https://i.imgur.com/IMAGE_ID_HERE.png"
+      onerror="this.src='https://via.placeholder.com/500x400/111/ff8c00?text=ARCADE+MC+ISLAND'"
+      class="floating-island"
+      alt="Arcade MC Island">
+
+    <h1 style="font-family:'Oxanium';font-size:4rem;margin-top:-50px;text-shadow:0 0 20px #000;">
+        ARCADE MC
+    </h1>
+</div>
+
+<div class="side-info">
+    <h2>1.20.4</h2>
+    <p>Server Version</p>
+</div>
+
+<div class="status-bar">
+
+    <div class="status-item">
+        <img src="https://mc-heads.net/avatar/steve" class="status-avatar">
+        <div>
+            <h4 style="color:var(--accent)">Welcome to Arcade MC!</h4>
+            <p>IP: <b>arcademc.networkindia.com:25582</b></p>
         </div>
     </div>
 
-    <section class="games-grid">
-        <div class="game-card"><h3>⚔️ Capture The Flag</h3><p>Classic tactical combat.</p></div>
-        <div class="game-card"><h3>🎯 One in the Chamber</h3><p>One shot, one kill.</p></div>
-        <div class="game-card"><h3>⚽ Soccer</h3><p>Fast-paced field action.</p></div>
-        <div class="game-card"><h3>🎉 Block Party</h3><p>Dance or fall into the void.</p></div>
-        <div class="game-card"><h3>🕹️ Paintball</h3><p>High-energy team splatting.</p></div>
-        <div class="game-card"><h3>🔥 Domination</h3><p>Control the zones to win.</p></div>
-    </section>
+    <div class="status-item">
+        <div style="text-align:right;margin-right:20px">
+            <p>Server Status: <span style="color:#00ff00">● ONLINE</span></p>
+            <p>Last Ping: 4 mins ago</p>
+        </div>
+        <a href="https://dsc.gg/arcademcnetwork" class="btn-discord">JOIN DISCORD</a>
+    </div>
 
-    <footer style="text-align: center; padding: 40px; color: #555; font-size: 13px;">
-        <p>© 2026 Arcade MC Network | Not an official Minecraft product.</p>
-        <p>India's Ultimate Minecraft Destination 🇮🇳</p>
-    </footer>
+</div>
+</div>
+
+<section class="games-grid">
+<div class="game-card"><h3>⚔️ Capture The Flag</h3><p>Classic tactical combat.</p></div>
+<div class="game-card"><h3>🎯 One in the Chamber</h3><p>One shot, one kill.</p></div>
+<div class="game-card"><h3>⚽ Soccer</h3><p>Fast-paced action.</p></div>
+<div class="game-card"><h3>🎉 Block Party</h3><p>Dance or fall.</p></div>
+<div class="game-card"><h3>🕹️ Paintball</h3><p>Team splatting.</p></div>
+<div class="game-card"><h3>🔥 Domination</h3><p>Control zones.</p></div>
+</section>
+
+<footer style="text-align:center;padding:40px;color:#555;font-size:13px">
+© 2026 Arcade MC Network | Not an official Minecraft product.<br>
+India's Ultimate Minecraft Destination 🇮🇳
+</footer>
 
 </body>
 </html>
