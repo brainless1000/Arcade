@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arcade MC Network | Official Indian Minigames</title>
+    <title>Arcade MC Network | Aqua Edition</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Oxanium:wght@600;800&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --accent: #ff8c00;
-            --accent-glow: rgba(255,140,0,0.4);
-            --bg-dark: #0a0a0b;
-            --card-bg: #161618;
-            --text-dim: #aaa;
+            /* AQUA THEME COLORS */
+            --accent: #00ffff;
+            --accent-glow: rgba(0, 255, 255, 0.3);
+            --bg-dark: #080d11;
+            --card-bg: #111a1f;
+            --text-dim: #8da2ad;
+            --nav-bg: rgba(8, 13, 17, 0.95);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: radial-gradient(circle at center, #1a1005 0%, #0a0a0b 100%);
+            /* Deep Aqua Radial Gradient */
+            background: radial-gradient(circle at center, #0e1e24 0%, #080d11 100%);
             color: white;
             line-height: 1.6;
             overflow-x: hidden;
@@ -30,84 +33,102 @@
             display: flex;
             justify-content: center;
             gap: 30px;
-            padding: 30px;
+            padding: 25px;
             font-family: 'Oxanium', sans-serif;
             letter-spacing: 2px;
             position: sticky;
             top: 0;
-            background: rgba(10, 10, 11, 0.9);
+            background: var(--nav-bg);
             z-index: 1000;
             backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
         }
 
         nav a {
             color: var(--text-dim);
             text-decoration: none;
             transition: 0.3s;
-            font-size: 14px;
+            font-size: 13px;
             cursor: pointer;
+            font-weight: 600;
         }
 
         nav a:hover, nav a.active {
             color: var(--accent);
-            text-shadow: 0 0 10px var(--accent);
+            text-shadow: 0 0 15px var(--accent-glow);
         }
 
         /* SECTION CONTROL */
         section { display: none; padding: 60px 5%; min-height: 70vh; }
-        section.active { display: block; animation: fadeIn 0.5s ease; }
+        section.active { display: block; animation: fadeIn 0.6s ease-out; }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* HERO & SHARED ELEMENTS */
+        /* HERO ELEMENTS */
         .hero {
             display: flex;
             justify-content: space-around;
             align-items: center;
-            min-height: 70vh;
+            min-height: 65vh;
             position: relative;
         }
 
-        .side-info h2 { font-family: 'Oxanium'; color: var(--accent); font-size: 2.2rem; }
-        .side-info p { font-size: 11px; letter-spacing: 3px; color: #888; text-transform: uppercase; }
+        .side-info h2 { 
+            font-family: 'Oxanium'; 
+            color: var(--accent); 
+            font-size: 2.2rem;
+            text-shadow: 0 0 10px var(--accent-glow);
+        }
+        .side-info p { font-size: 11px; letter-spacing: 3px; color: var(--text-dim); text-transform: uppercase; }
 
         .logo-container { flex: 1.5; display: flex; flex-direction: column; align-items: center; }
         .floating-island {
             width: 100%;
-            max-width: 450px;
-            filter: drop-shadow(0 0 30px var(--accent-glow));
-            animation: float 4s ease-in-out infinite;
+            max-width: 420px;
+            filter: drop-shadow(0 0 40px var(--accent-glow));
+            animation: float 5s ease-in-out infinite;
         }
 
-        @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-20px);} }
+        @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-25px);} }
+
+        .main-title {
+            font-family: 'Oxanium';
+            font-size: 4rem;
+            margin-top: -40px;
+            color: white;
+            text-shadow: 0 0 20px rgba(0,255,255,0.5);
+            letter-spacing: 5px;
+        }
 
         /* STATUS BAR */
         .status-bar {
-            background: rgba(15, 15, 15, 0.95);
-            padding: 20px 40px;
-            border-radius: 15px;
+            background: rgba(17, 26, 31, 0.8);
+            padding: 25px 40px;
+            border-radius: 12px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 4px solid var(--accent);
+            border-left: 4px solid var(--accent);
             max-width: 1100px;
             margin: 20px auto;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .ip-box { cursor: pointer; transition: 0.3s; }
-        .ip-box:hover { opacity: 0.8; }
+        .ip-box h4 { color: var(--accent); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
 
-        /* CONTENT CARDS */
+        /* CARDS & GRIDS */
         .content-card {
             background: var(--card-bg);
             padding: 40px;
-            border-radius: 15px;
+            border-radius: 12px;
             max-width: 900px;
             margin: 0 auto;
-            border: 1px solid #222;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
         h2.section-title {
@@ -116,45 +137,60 @@
             text-align: center;
             margin-bottom: 40px;
             color: var(--accent);
+            text-transform: uppercase;
         }
 
-        /* FAQ & RULES STYLING */
-        .item-list { list-style: none; }
         .item-list li {
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #222;
+            list-style: none;
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 2px solid var(--accent);
         }
-        .item-list h4 { color: var(--accent); font-family: 'Oxanium'; margin-bottom: 5px; }
+        .item-list h4 { color: var(--accent); font-family: 'Oxanium'; margin-bottom: 5px; font-size: 1.2rem; }
 
-        /* BUTTONS */
-        .btn-discord {
-            background: #5865F2; color: white; padding: 12px 25px;
-            border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s;
-        }
-        .btn-discord:hover { background: #4752c4; transform: scale(1.05); }
-
-        /* GAMES GRID */
         .games-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 1100px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1150px;
             margin: 0 auto;
         }
         .game-card {
             background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
+            padding: 35px;
+            border-radius: 15px;
             text-align: center;
-            border: 1px solid #222;
-            transition: 0.3s;
+            border: 1px solid rgba(0, 255, 255, 0.05);
+            transition: 0.4s;
         }
-        .game-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .game-card:hover { 
+            border-color: var(--accent); 
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,255,255,0.1);
+        }
+
+        /* BUTTONS */
+        .btn-discord {
+            background: var(--accent);
+            color: #000;
+            padding: 12px 28px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            font-family: 'Oxanium';
+            transition: 0.3s;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+        .btn-discord:hover { 
+            background: white;
+            transform: scale(1.05);
+            box-shadow: 0 0 25px var(--accent);
+        }
 
         @media(max-width: 1000px){
-            .hero { flex-direction: column; text-align: center; }
-            .status-bar { flex-direction: column; gap: 20px; text-align: center; }
+            .hero { flex-direction: column; text-align: center; gap: 40px; }
+            .status-bar { flex-direction: column; gap: 20px; text-align: center; width: 95%; }
+            .main-title { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -171,15 +207,15 @@
 <section id="home" class="active">
     <div class="hero">
         <div class="side-info">
-            <h2 id="player-count">0 / 1000</h2>
+            <h2 id="player-count">42 / 1000</h2>
             <p>Players Competing</p>
         </div>
 
         <div class="logo-container">
             <img src="https://i.imgur.com/IMAGE_ID_HERE.png" 
-                 onerror="this.src='https://via.placeholder.com/500x400/111/ff8c00?text=ARCADE+MC+ISLAND'" 
+                 onerror="this.src='https://via.placeholder.com/500x400/080d11/00ffff?text=ARCADE+AQUA+ISLAND'" 
                  class="floating-island" alt="Arcade MC">
-            <h1 style="font-family:'Oxanium';font-size:3.5rem;margin-top:-50px;text-shadow:0 0 20px #000;">ARCADE MC</h1>
+            <h1 class="main-title">ARCADE MC</h1>
         </div>
 
         <div class="side-info">
@@ -189,16 +225,17 @@
     </div>
 
     <div class="status-bar">
-        <div style="display:flex; align-items:center; gap:15px;">
-            <img src="https://mc-heads.net/avatar/steve" style="width:50px; border-radius:5px;">
+        <div style="display:flex; align-items:center; gap:20px;">
+            <img src="https://mc-heads.net/avatar/steve" style="width:55px; border-radius:8px; border: 2px solid var(--accent);">
             <div class="ip-box" onclick="copyIP()">
-                <h4 style="color:var(--accent)">Click to Copy IP</h4>
-                <p id="server-ip">arcademc.networkindia.com:25582</p>
+                <h4>Join the Network</h4>
+                <p id="server-ip" style="font-weight:700; font-size: 1.1rem;">arcademc.networkindia.com</p>
             </div>
         </div>
-        <div style="display:flex; align-items:center; gap:20px;">
+        <div style="display:flex; align-items:center; gap:25px;">
             <div style="text-align:right">
-                <p>Status: <span style="color:#00ff00">● ONLINE</span></p>
+                <p style="font-size: 0.8rem; color: var(--text-dim);">Status</p>
+                <p style="color:var(--accent); font-weight: 800; letter-spacing: 1px;">● ONLINE</p>
             </div>
             <a href="https://dsc.gg/arcademcnetwork" class="btn-discord">JOIN DISCORD</a>
         </div>
@@ -206,83 +243,76 @@
 </section>
 
 <section id="games">
-    <h2 class="section-title">OUR MINIGAMES</h2>
+    <h2 class="section-title">Minigame Selection</h2>
     <div class="games-grid">
-        <div class="game-card"><h3>⚔️ Capture The Flag</h3><p>Classic tactical combat.</p></div>
-        <div class="game-card"><h3>🎯 One in the Chamber</h3><p>One shot, one kill.</p></div>
-        <div class="game-card"><h3>⚽ Soccer</h3><p>Fast-paced action.</p></div>
-        <div class="game-card"><h3>🎉 Block Party</h3><p>Dance or fall.</p></div>
-        <div class="game-card"><h3>🕹️ Paintball</h3><p>Team splatting.</p></div>
-        <div class="game-card"><h3>🔥 Domination</h3><p>Control zones.</p></div>
+        <div class="game-card"><h3>⚔️ Capture The Flag</h3><p>Strategic team-based combat.</p></div>
+        <div class="game-card"><h3>🎯 One in the Chamber</h3><p>Precision and speed matter.</p></div>
+        <div class="game-card"><h3>⚽ Soccer</h3><p>Ultimate block-football.</p></div>
+        <div class="game-card"><h3>🎉 Block Party</h3><p>Follow the color or fall.</p></div>
+        <div class="game-card"><h3>🕹️ Paintball</h3><p>Fast-paced team elimination.</p></div>
+        <div class="game-card"><h3>🔥 Domination</h3><p>Hold the zones to win.</p></div>
     </div>
 </section>
 
 <section id="rules">
-    <h2 class="section-title">SERVER RULES</h2>
+    <h2 class="section-title">Server Directives</h2>
     <div class="content-card">
         <ul class="item-list">
-            <li><h4>1. No Hacking or Cheating</h4>Any use of unfair clients, auto-clickers, or X-Ray will result in a permanent ban.</li>
-            <li><h4>2. No Toxicity or Abuse</h4>Respect all players. Racism, sexism, or extreme toxicity is not tolerated.</li>
-            <li><h4>3. No Exploiting</h4>If you find a bug, report it. Using bugs for personal gain is bannable.</li>
-            <li><h4>4. Respect Staff</h4>Our staff works hard to keep the server clean. Follow their directions.</li>
-            <li><h4>5. Fair Play</h4>No cross-teaming in solo games or griefing your own team.</li>
+            <li><h4>01. Integrity</h4>No hacking, cheating, or use of prohibited modifications.</li>
+            <li><h4>02. Respect</h4>Maintain a friendly environment. No harassment or hate speech.</li>
+            <li><h4>03. Stability</h4>Do not exploit bugs. Report them to staff immediately.</li>
+            <li><h4>04. Authority</h4>Staff decisions are final. Respect the moderation team.</li>
+            <li><h4>05. Fair Play</h4>Keep the games competitive but fair for everyone.</li>
         </ul>
     </div>
 </section>
 
 <section id="changelog">
-    <h2 class="section-title">LATEST UPDATES</h2>
+    <h2 class="section-title">Development Logs</h2>
     <div class="content-card">
-        <div style="border-left: 3px solid var(--accent); padding-left: 20px; margin-bottom: 30px;">
-            <h3 style="color:var(--accent)">v2.1 - The Winter Update</h3>
-            <p style="font-size: 0.8rem; color: #666;">Released: Jan 2026</p>
-            <ul style="margin-top:10px; margin-left: 20px;">
-                <li>Added "Ice Soccer" limited time map.</li>
-                <li>Fixed lag issues on Capture the Flag.</li>
-                <li>New Lobby decorations.</li>
+        <div style="border-left: 4px solid var(--accent); padding-left: 20px;">
+            <h3 style="color:var(--accent); font-family: 'Oxanium';">System Update v2.5</h3>
+            <p style="font-size: 0.75rem; color: var(--text-dim); margin-bottom: 15px;">PATCHED: JAN 04, 2026</p>
+            <ul style="margin-left: 20px; color: #cfd8dc;">
+                <li>Implemented New Aqua UI Theme.</li>
+                <li>Optimized Lobby performance for Indian Ping.</li>
+                <li>Added anti-cheat definitions for 1.20.4.</li>
             </ul>
         </div>
     </div>
 </section>
 
 <section id="faq">
-    <h2 class="section-title">FREQUENTLY ASKED</h2>
+    <h2 class="section-title">Knowledge Base</h2>
     <div class="content-card">
         <ul class="item-list">
-            <li><h4>Is the server cracked?</h4>Yes, we support both Premium and Cracked accounts.</li>
-            <li><h4>Is it Pay-to-Win (P2W)?</h4>No. All ranks are cosmetic or provide utility (like priority queue), never combat advantages.</li>
-            <li><h4>How to earn coins?</h4>Play minigames! Winning matches and completing daily quests gives you coins.</li>
-            <li><h4>How to report hackers?</h4>Use /report [name] in-game or open a ticket in our Discord.</li>
+            <li><h4>Is the server cracked?</h4>Yes, we support both premium and non-premium players.</li>
+            <li><h4>How do I get ranks?</h4>Visit our official store or participate in server events.</li>
+            <li><h4>Where are the servers located?</h4>Our nodes are optimized for the best latency in India.</li>
+            <li><h4>How do I report a player?</h4>Use /report in-game or the #reports channel on Discord.</li>
         </ul>
     </div>
 </section>
 
-<footer style="text-align:center;padding:60px;color:#555;font-size:13px">
-    © 2026 Arcade MC Network | India's Ultimate Minecraft Destination 🇮🇳
+<footer style="text-align:center;padding:80px 20px;color:#455a64;font-size:12px; letter-spacing: 1px;">
+    © 2026 ARCADE MC NETWORK | ALL RIGHTS RESERVED<br>
+    NOT AN OFFICIAL MINECRAFT PRODUCT.
 </footer>
 
 <script>
-    // PAGE SWITCHER LOGIC
     function showPage(pageId) {
-        // Hide all sections
         document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
-        // Remove active class from nav
         document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
         
-        // Show selected section
         document.getElementById(pageId).classList.add('active');
-        // Set nav link to active
         event.currentTarget.classList.add('active');
-        
-        // Scroll to top
         window.scrollTo(0,0);
     }
 
-    // COPY IP FUNCTION
     function copyIP() {
-        const ip = document.getElementById('server-ip').innerText;
+        const ip = "arcademc.networkindia.com";
         navigator.clipboard.writeText(ip);
-        alert("IP Copied: " + ip);
+        alert("Server IP Copied: " + ip);
     }
 </script>
 
