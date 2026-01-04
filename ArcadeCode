@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arcade MC Network | Indian Minigames Server</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<header>
+    <h1>🎮 Arcade MC Network</h1>
+    <p>India's Ultimate Minecraft Minigames Server</p>
+    <div class="ip-box">
+        Java IP: <span>arcademc.networkindia.com:25582</span>
+    </div>
+</header>
+
+<section class="about">
+    <h2>About the Server</h2>
+    <p>
+        Arcade MC Network is a fast-paced Minecraft Java Edition server focused on
+        <b>pure minigames fun</b>. No survival. No lifesteal. Just action!
+    </p>
+</section>
+
+<section class="games">
+    <h2>Game Modes</h2>
+    <ul>
+        <li>⚔️ Capture the Flag</li>
+        <li>🟥 Team Deathmatch</li>
+        <li>🎯 One in the Chamber</li>
+        <li>⚽ Soccer</li>
+        <li>💣 Bowspleef</li>
+        <li>🎉 Block Party</li>
+        <li>🕹️ Paintball</li>
+        <li>🔥 Domination (NEW)</li>
+    </ul>
+</section>
+
+<section class="features">
+    <h2>Features</h2>
+    <ul>
+        <li>✅ Lag-free & fast queues</li>
+        <li>✅ Custom ranks & scoreboards</li>
+        <li>✅ Weekly events & giveaways</li>
+        <li>✅ 24/7 uptime</li>
+        <li>✅ Friendly & active staff</li>
+    </ul>
+</section>
+
+<section class="join">
+    <h2>How to Join</h2>
+    <ol>
+        <li>Open Minecraft Java Edition</li>
+        <li>Go to Multiplayer → Add Server</li>
+        <li>Enter IP: <b>arcademc.networkindia.com:25582</b></li>
+        <li>Click Join & have fun!</li>
+    </ol>
+</section>
+
+<section class="discord">
+    <h2>Join Our Discord</h2>
+    <a href="https://dsc.gg/arcademcnetwork" target="_blank">🎧 Join Discord</a>
+</section>
+
+<footer>
+    <p>© 2026 Arcade MC Network | Made for Minecraft Players 🇮🇳</p>
+</footer>
+
+</body>
+</html>
