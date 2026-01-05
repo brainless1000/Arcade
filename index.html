@@ -30,7 +30,8 @@ body{
 nav{
     display:flex;
     justify-content:center;
-    gap:30px;
+    flex-wrap: wrap;
+    gap:20px;
     padding:25px;
     font-family:'Oxanium',sans-serif;
     letter-spacing:2px;
@@ -132,57 +133,34 @@ section.active{display:block;animation:fadeIn .6s ease-out;}
 }
 
 /* GRIDS */
-.games-grid, .features-grid{
+.games-grid, .features-grid, .content-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:25px;
     max-width:1150px;
     margin:0 auto;
 }
 
-.game-card, .feature-card{
+.game-card, .feature-card, .info-card{
     background:var(--card-bg);
-    padding:35px 25px;
+    padding:25px;
     border-radius:15px;
     text-align:center;
     border:1px solid rgba(0,255,255,.05);
-    transition:.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    overflow: hidden;
+    transition:.3s;
 }
-
-.game-card:hover, .feature-card:hover{
+.game-card:hover, .feature-card:hover, .info-card:hover{
     border-color:var(--accent);
     transform:translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0,255,255,0.1);
-}
-
-.game-card h3, .feature-card h3{
-    font-family: 'Oxanium';
-    color: var(--accent);
-    margin-bottom: 15px;
-    font-size: 1.4rem;
-}
-
-.game-card p, .feature-card p{
-    color: var(--text-dim);
-    line-height: 1.6;
-    font-size: 0.95rem;
 }
 
 /* TITLES */
 h2.section-title{
     font-family:'Oxanium';
-    font-size:3rem;
+    font-size:2.5rem;
     text-align:center;
-    margin-bottom:50px;
-    color:white;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-}
-
-h2.section-title span {
-    color: var(--accent);
+    margin-bottom:40px;
+    color:var(--accent);
 }
 
 /* MOBILE */
@@ -200,6 +178,8 @@ h2.section-title span {
     <a onclick="showPage('home',this)" class="active">HOME</a>
     <a onclick="showPage('minigames',this)">MINIGAMES</a>
     <a onclick="showPage('features',this)">FEATURES</a>
+    <a onclick="showPage('rules',this)">RULES</a>
+    <a onclick="showPage('faq',this)">FAQ</a>
 </nav>
 
 <section id="home" class="active">
@@ -208,11 +188,9 @@ h2.section-title span {
             <h2>42 / 1000</h2>
             <p>Players Competing</p>
         </div>
-
         <div class="logo-container">
             <h1 class="main-title">ARCADE MC</h1>
         </div>
-
         <div class="side-info">
             <h2>1.20.4</h2>
             <p>Server Version</p>
@@ -227,7 +205,6 @@ h2.section-title span {
                 <p style="font-weight:700">arcademc.networkindia.com</p>
             </div>
         </div>
-
         <div style="display:flex;align-items:center;gap:25px;">
             <div style="text-align:right">
                 <p style="font-size:.8rem;color:var(--text-dim)">Status</p>
@@ -239,68 +216,69 @@ h2.section-title span {
 </section>
 
 <section id="minigames">
-    <h2 class="section-title">AQUA <span>MINIGAMES</span></h2>
+    <h2 class="section-title">Minigames</h2>
     <div class="games-grid">
         <div class="game-card">
             <h3>⚔️ Capture The Flag</h3>
-            <p>Team vs Team. Capture enemy flag and bring it back to your base to score!</p>
+            <p>Team vs Team. Capture enemy flag!</p>
         </div>
         <div class="game-card">
             <h3>🎯 One in the Chamber</h3>
-            <p>Each player has 1 arrow. Kill to replenish. Last one standing wins!</p>
+            <p>Each player has 1 arrow. Last one standing wins!</p>
         </div>
         <div class="game-card">
             <h3>⚽ Soccer</h3>
-            <p>Ultimate block-football with teams! Experience realistic physics in MC.</p>
+            <p>Ultimate block-football with teams!</p>
         </div>
         <div class="game-card">
             <h3>🎉 Block Party</h3>
-            <p>Listen to the music and find the right color or fall into the void!</p>
+            <p>Follow the color or fall into the void!</p>
         </div>
         <div class="game-card">
             <h3>🕹️ Paintball</h3>
-            <p>Fast-paced team elimination with custom paint guns and powerups!</p>
+            <p>Fast-paced team elimination with paint guns!</p>
         </div>
         <div class="game-card">
             <h3>🔥 Domination</h3>
-            <p>Hold the strategic zones to earn points for your team and win the match!</p>
+            <p>Hold the zones to win!</p>
         </div>
     </div>
 </section>
 
 <section id="features">
-    <h2 class="section-title">SERVER <span>FEATURES</span></h2>
+    <h2 class="section-title">Server Features</h2>
     <div class="features-grid">
-        <div class="feature-card">
-            <h3>🏆 Ranked Gameplay</h3>
-            <p>Compete in high-stakes matches and climb our global seasonal leaderboard.</p>
-        </div>
-        <div class="feature-card">
-            <h3>⚡ 24/7 Uptime</h3>
-            <p>Hosted on high-performance dedicated hardware to ensure zero lag, always.</p>
-        </div>
-        <div class="feature-card">
-            <h3>🎁 Player Rewards</h3>
-            <p>Earn crates, keys, and cosmetics just by playing and completing daily quests.</p>
-        </div>
-        <div class="feature-card">
-            <h3>📊 Custom Scoreboards</h3>
-            <p>Real-time stats tracking including K/D ratio, wins, and objective captures.</p>
-        </div>
-        <div class="feature-card">
-            <h3>💬 Discord Events</h3>
-            <p>Join our community for weekly nitro giveaways and exclusive staff-led events.</p>
-        </div>
-        <div class="feature-card">
-            <h3>🗺️ New Maps Often</h3>
-            <p>Our build team releases new arenas and map updates every single week.</p>
-        </div>
+        <div class="feature-card"><h3>Ranked Gameplay</h3><p>Compete and climb the leaderboard.</p></div>
+        <div class="feature-card"><h3>24/7 Uptime</h3><p>Always online for players.</p></div>
+        <div class="feature-card"><h3>Player Rewards</h3><p>Earn rewards for playing and events.</p></div>
+        <div class="feature-card"><h3>Custom Scoreboards</h3><p>Track stats and objectives.</p></div>
+        <div class="feature-card"><h3>Discord Events</h3><p>Regular events and giveaways.</p></div>
+        <div class="feature-card"><h3>New Maps Often</h3><p>New arenas added every week!</p></div>
+    </div>
+</section>
+
+<section id="rules">
+    <h2 class="section-title">Server Rules</h2>
+    <div class="content-grid">
+        <div class="info-card"><h3>No Hacking</h3><p>Use of unauthorized clients or scripts results in a permanent ban.</p></div>
+        <div class="info-card"><h3>Respect Others</h3><p>No toxicity, racism, or harassment in public or private chats.</p></div>
+        <div class="info-card"><h3>No Griefing</h3><p>Respect the builds and the community maps.</p></div>
+        <div class="info-card"><h3>No Advertising</h3><p>Do not promote other servers or services in our network.</p></div>
+    </div>
+</section>
+
+<section id="faq">
+    <h2 class="section-title">Frequently Asked</h2>
+    <div class="content-grid">
+        <div class="info-card"><h3>How to join?</h3><p>Copy the IP: arcademc.networkindia.com and add it to your server list.</p></div>
+        <div class="info-card"><h3>What version?</h3><p>We officially support 1.20.4, but older versions may work.</p></div>
+        <div class="info-card"><h3>Is it free?</h3><p>Yes! Our network is free to play for everyone.</p></div>
     </div>
 </section>
 
 <footer style="text-align:center;padding:80px 20px;color:#455a64;font-size:12px;">
-    © 2026 ARCADE MC NETWORK | ALL RIGHTS RESERVED<br>
-    NOT AN OFFICIAL MINECRAFT PRODUCT
+© 2026 ARCADE MC NETWORK | ALL RIGHTS RESERVED<br>
+NOT AN OFFICIAL MINECRAFT PRODUCT
 </footer>
 
 <script>
