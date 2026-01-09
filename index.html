@@ -1,300 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arcade MC Network | Aqua Edition</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Oxanium:wght@600;800&display=swap" rel="stylesheet">
-
-<style>
-:root{
-    --accent:#00ffff;
-    --accent-glow:rgba(0,255,255,0.3);
-    --bg-dark:#080d11;
-    --card-bg:#111a1f;
-    --text-dim:#8da2ad;
-    --nav-bg:rgba(8,13,17,0.95);
-}
-
-*{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-    font-family:'Montserrat',sans-serif;
-    background:radial-gradient(circle at center,#0e1e24 0%,#080d11 100%);
-    color:white;
-    overflow-x:hidden;
-}
-
-/* NAV */
-nav{
-    display:flex;
-    justify-content:center;
-    flex-wrap: wrap;
-    gap:20px;
-    padding:25px;
-    font-family:'Oxanium',sans-serif;
-    letter-spacing:2px;
-    position:sticky;
-    top:0;
-    background:var(--nav-bg);
-    z-index:1000;
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(0,255,255,0.1);
-}
-
-nav a{
-    color:var(--text-dim);
-    text-decoration:none;
-    font-size:13px;
-    font-weight:600;
-    cursor:pointer;
-    transition:.3s;
-}
-
-nav a:hover,
-nav a.active{
-    color:var(--accent);
-    text-shadow:0 0 15px var(--accent-glow);
-}
-
-/* SECTIONS */
-section{display:none;padding:60px 5%;min-height:70vh;}
-section.active{display:block;animation:fadeIn .6s ease-out;}
-
-@keyframes fadeIn{
-    from{opacity:0;transform:translateY(15px);}
-    to{opacity:1;transform:translateY(0);}
-}
-
-/* HERO */
-.hero{
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-    min-height:60vh;
-}
-
-.side-info h2{
-    font-family:'Oxanium';
-    color:var(--accent);
-    font-size:2.2rem;
-    text-shadow:0 0 10px var(--accent-glow);
-}
-.side-info p{
-    font-size:11px;
-    letter-spacing:3px;
-    color:var(--text-dim);
-    text-transform:uppercase;
-}
-
-.logo-container{
-    flex:1.5;
-    text-align:center;
-}
-
-.main-title{
-    font-family:'Oxanium';
-    font-size:4rem;
-    letter-spacing:6px;
-    color:white;
-    text-shadow:0 0 25px rgba(0,255,255,.6);
-}
-
-/* STATUS BAR */
-.status-bar{
-    background:rgba(17,26,31,.85);
-    padding:25px 40px;
-    border-radius:12px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    border-left:4px solid var(--accent);
-    max-width:1100px;
-    margin:30px auto;
-    backdrop-filter:blur(5px);
-}
-
-/* BUTTON */
-.btn-discord{
-    background:var(--accent);
-    color:#000;
-    padding:12px 28px;
-    border-radius:5px;
-    text-decoration:none;
-    font-weight:800;
-    font-family:'Oxanium';
-    box-shadow:0 0 15px var(--accent-glow);
-    transition:.3s;
-}
-.btn-discord:hover{
-    background:white;
-    transform:scale(1.05);
-}
-
-/* GRIDS */
-.games-grid, .features-grid, .content-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-    max-width:1150px;
-    margin:0 auto;
-}
-
-.game-card, .feature-card, .info-card{
-    background:var(--card-bg);
-    padding:25px;
-    border-radius:15px;
-    text-align:center;
-    border:1px solid rgba(0,255,255,.05);
-    transition:.3s;
-}
-.game-card:hover, .feature-card:hover, .info-card:hover{
-    border-color:var(--accent);
-    transform:translateY(-10px);
-}
-
-/* TITLES */
-h2.section-title{
-    font-family:'Oxanium';
-    font-size:2.5rem;
-    text-align:center;
-    margin-bottom:40px;
-    color:var(--accent);
-}
-
-/* MOBILE */
-@media(max-width:1000px){
-    .hero{flex-direction:column;gap:40px;text-align:center;}
-    .status-bar{flex-direction:column;gap:20px;text-align:center;}
-    .main-title{font-size:2.6rem;}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Network</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" href="https://cdn.discordapp.com/attachments/1385282079914332230/1390637967080554547/channels4_profile.jpg?ex=6868fc08&is=6867aa88&hm=58b431e9adfa63cd43c38667bc82c2050ea73f4dfb579a099be5a2a10488bf1a&">
+  <style>
+    :root {
+      --main-bg1: #232526;
+      --main-bg2: #414345;
+      --accent: #5865f2;
+      --text: #fff;
+      --subtext: #b0b3b8;
+      --radius: 18px;
+      --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      min-height: 100vh;
+      font-family: 'Roboto', Arial, sans-serif;
+      color: var(--text);
+      background: linear-gradient(120deg, #0f2027 0%, #232526 50%, #2c5364 100%);
+      background-size: 200% 200%;
+      transition: background-position 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+    }
+    #falling-dots {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      display: block;
+    }
+    header {
+      margin-top: 48px;
+      text-align: center;
+      animation: fadeInDown 1s;
+      z-index: 2;
+      position: relative;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .welcome-message {
+      font-size: 2.8rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #5865f2, #00c3ff, #2c5364, #fff, #5865f2);
+      background-size: 300% auto;
+      color: #fff;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-fill-color: transparent;
+      letter-spacing: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: .15em solid #fff;
+      width: 0;
+      opacity: 1;
+      filter: drop-shadow(0 0 12px #5865f2) drop-shadow(0 0 24px #00c3ff);
+      animation:
+        typing 2.2s steps(25, end) 0.2s forwards,
+        blink-caret 0.7s step-end infinite,
+        welcomeGradient 3s linear infinite 2.4s;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 22ch }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #fff; }
+    }
+    @keyframes welcomeGradient {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid var(--accent);
+      box-shadow: var(--shadow);
+      object-fit: cover;
+      margin-bottom: 18px;
+      transition: transform 0.3s;
+      background: #232526;
+    }
+    .profile-img:hover {
+      transform: scale(1.05) rotate(-2deg);
+    }
+    h1 {
+      display: none; /* Hide the old h1 */
+    }
+    .sections {
+      width: 100%;
+      max-width: 1400px;
+      margin: 40px auto 0 auto;
+      display: flex;
+      flex-direction: row;
+      gap: 36px;
+      z-index: 2;
+      position: relative;
+      justify-content: center;
+      align-items: stretch;
+      flex-wrap: wrap;
+    }
+    .section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(35,39,47,0.92);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 32px 24px;
+      gap: 24px;
+      min-width: 260px;
+      max-width: 320px;
+      flex: 1 1 260px;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 1s forwards;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .section:hover {
+      transform: translateY(0) scale(1.05);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    }
+    .section .about {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .section .about-title {
+      font-size: 1.35rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+    .section .about-desc {
+      color: var(--subtext);
+      font-size: 1.08rem;
+      margin-bottom: 18px;
+      line-height: 1.6;
+      padding: 0 10px;
+    }
+    .section .btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 22px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      text-decoration: none;
+      box-shadow: 0 2px 8px 0 rgba(88,101,242,0.12);
+      display: inline-block;
+      width: fit-content;
+    }
+    .section.youtube .btn { background: #ff0000; }
+    .section.discord .btn { background: #5865f2; }
+    .section.instagram .btn { background: #e1306c; }
+    .section.facebook .btn { background: #1877f3; }
+    .section .btn:hover {
+      background: #fff;
+      color: var(--accent);
+      transform: scale(1.07);
+    }
+    .section.youtube .btn:hover { color: #ff0000; }
+    .section.discord .btn:hover { color: #5865f2; }
+    .section.instagram .btn:hover { color: #e1306c; }
+    .section.facebook .btn:hover { color: #1877f3; }
+    .section .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 120px;
+    }
+    .section .logo i {
+      font-size: 7rem;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 2px 12px rgba(0,0,0,0.18));
+      transition: transform 0.3s;
+    }
+    .section.youtube .logo i { color: #ff0000; }
+    .section.discord .logo i { color: #5865f2; }
+    .section.instagram .logo i { color: #e1306c; }
+    .section.facebook .logo i { color: #1877f3; }
+    .section .logo i:hover {
+      transform: scale(1.12) rotate(-4deg);
+    }
+    .section.youtube { animation-delay: 0.2s; }
+    .section.discord { animation-delay: 0.5s; }
+    .section.instagram { animation-delay: 0.8s; }
+    .section.facebook { animation-delay: 1.1s; }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    footer {
+      margin-top: 48px;
+      padding: 24px 0 12px 0;
+      color: var(--subtext);
+      font-size: 0.98rem;
+      text-align: center;
+      letter-spacing: 0.2px;
+      opacity: 0.7;
+      z-index: 2;
+      position: relative;
+    }
+    @media (max-width: 600px) {
+      .welcome-message {
+        font-size: 1.3rem;
+      }
+      .profile-img { width: 90px; height: 90px;}
+    }
+  </style>
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/6e2e6e6e6e.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
+  <canvas id="falling-dots"></canvas>
+  <header>
+    <div class="welcome-message">welcome to my network</div>
+    <img class="profile-img" src="𝐏𝐡𝐨𝐭𝐨 𝐥𝐢𝐧𝐤" alt="My Profile">
+    <h1>welcome to my network </h1>
+  </header>
 
-<nav>
-    <a onclick="showPage('home',this)" class="active">HOME</a>
-    <a onclick="showPage('minigames',this)">MINIGAMES</a>
-    <a onclick="showPage('features',this)">FEATURES</a>
-    <a onclick="showPage('rules',this)">RULES</a>
-    <a onclick="showPage('faq',this)">FAQ</a>
-</nav>
+  <div class="sections">
+    <section class="section youtube">
+      <div class="logo">
+        <i class="fab fa-youtube"></i>
+      </div>
+      <div class="about">
+        <div class="about-title">YouTube</div>
+        <div class="about-desc">
+          Dive into my world of videos!<br>
+          Tutorials, gaming, vlogs, and exclusive streams await.<br>
+          Subscribe and join the My Network family!
+        </div>
+        <a class="btn" href="𝐘𝐨𝐮𝐭𝐮𝐛𝐞 𝐥𝐢𝐧𝐤" target="_blank">Subscribe</a>
+      </div>
+    </section>
 
-<section id="home" class="active">
-    <div class="hero">
-        <div class="side-info">
-            <h2>42 / 1000</h2>
-            <p>Players Competing</p>
+    <section class="section discord">
+      <div class="logo">
+        <i class="fab fa-discord"></i>
+      </div>
+      <div class="about">
+        <div class="about-title">Discord</div>
+        <div class="about-desc">
+          Be part of our active Discord community.<br>
+          Chat, share, get updates, and make new friends.<br>
+          Events, giveaways, and more—see you inside!
         </div>
-        <div class="logo-container">
-            <h1 class="main-title">ARCADE MC</h1>
-        </div>
-        <div class="side-info">
-            <h2>1.20.4</h2>
-            <p>Server Version</p>
-        </div>
-    </div>
+        <a class="btn" href="𝐝𝐢𝐬𝐜𝐨𝐫𝐝 𝐥𝐢𝐧𝐤" target="_blank">Join Now</a>
+      </div>
+    </section>
 
-    <div class="status-bar">
-        <div style="display:flex;align-items:center;gap:20px;">
-            <img src="https://mc-heads.net/avatar/brainless100/64" style="width:55px;border-radius:8px;border:2px solid var(--accent);">
-            <div onclick="copyIP()" style="cursor:pointer">
-                <h4 style="color:var(--accent)">Join the Network</h4>
-                <p style="font-weight:700">arcademc.networkindia.com</p>
-            </div>
+    <section class="section instagram">
+      <div class="logo">
+        <i class="fab fa-instagram"></i>
+      </div>
+      <div class="about">
+        <div class="about-title">Instagram</div>
+        <div class="about-desc">
+          Get a glimpse behind the scenes.<br>
+          Stories, reels, and daily moments from my life.<br>
+          Follow for exclusive content and updates!
         </div>
-        <div style="display:flex;align-items:center;gap:25px;">
-            <div style="text-align:right">
-                <p style="font-size:.8rem;color:var(--text-dim)">Status</p>
-                <p style="color:var(--accent);font-weight:800">● ONLINE</p>
-            </div>
-            <a href="https://dsc.gg/arcademcnetwork" class="btn-discord">JOIN DISCORD</a>
+        <a class="btn" href="𝐢𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦 𝐥𝐢𝐧𝐤" target="_blank">Follow</a>
+      </div>
+    </section>
+
+    <section class="section facebook">
+      <div class="logo">
+        <i class="fab fa-facebook"></i>
+      </div>
+      <div class="about">
+        <div class="about-title">Facebook</div>
+        <div class="about-desc">
+          Like my Facebook page for news and events.<br>
+          Stay updated with the latest posts and community highlights.<br>
+          Join the conversation and connect!
         </div>
-    </div>
-</section>
+        <a class="btn" href="𝐟𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐥𝐢𝐧𝐤" target="_blank">Like Page</a>
+      </div>
+    </section>
+  </div>
 
-<section id="minigames">
-    <h2 class="section-title">Minigames</h2>
-    <div class="games-grid">
-        <div class="game-card">
-            <h3>⚔️ Capture The Flag</h3>
-            <p>Team vs Team. Capture enemy flag!</p>
-        </div>
-        <div class="game-card">
-            <h3>🎯 One in the Chamber</h3>
-            <p>Each player has 1 arrow. Last one standing wins!</p>
-        </div>
-        <div class="game-card">
-            <h3>⚽ Soccer</h3>
-            <p>Ultimate block-football with teams!</p>
-        </div>
-        <div class="game-card">
-            <h3>🎉 Block Party</h3>
-            <p>Follow the color or fall into the void!</p>
-        </div>
-        <div class="game-card">
-            <h3>🕹️ Paintball</h3>
-            <p>Fast-paced team elimination with paint guns!</p>
-        </div>
-        <div class="game-card">
-            <h3>🔥 Domination</h3>
-            <p>Hold the zones to win!</p>
-        </div>
-    </div>
-</section>
+  <footer>
+    &copy; 2025 My network
+  </footer>
+  <!-- Font Awesome CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+  <script>
+    // Animate sections in order
+    document.addEventListener("DOMContentLoaded", function() {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach((section, i) => {
+        setTimeout(() => {
+          section.style.opacity = 1;
+          section.style.transform = "translateY(0)";
+        }, 300 + i * 300);
+      });
+    });
 
-<section id="features">
-    <h2 class="section-title">Server Features</h2>
-    <div class="features-grid">
-        <div class="feature-card"><h3>Ranked Gameplay</h3><p>Compete and climb the leaderboard.</p></div>
-        <div class="feature-card"><h3>24/7 Uptime</h3><p>Always online for players.</p></div>
-        <div class="feature-card"><h3>Player Rewards</h3><p>Earn rewards for playing and events.</p></div>
-        <div class="feature-card"><h3>Custom Scoreboards</h3><p>Track stats and objectives.</p></div>
-        <div class="feature-card"><h3>Discord Events</h3><p>Regular events and giveaways.</p></div>
-        <div class="feature-card"><h3>New Maps Often</h3><p>New arenas added every week!</p></div>
-    </div>
-</section>
+    // Parallax background effect
+    document.addEventListener('mousemove', function(e) {
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+      document.body.style.backgroundPosition = `${x * 100}% ${y * 100}%`;
+    });
 
-<section id="rules">
-    <h2 class="section-title">Server Rules</h2>
-    <div class="content-grid">
-        <div class="info-card"><h3>No Hacking</h3><p>Use of unauthorized clients or scripts results in a permanent ban.</p></div>
-        <div class="info-card"><h3>Respect Others</h3><p>No toxicity, racism, or harassment in public or private chats.</p></div>
-        <div class="info-card"><h3>No Griefing</h3><p>Respect the builds and the community maps.</p></div>
-        <div class="info-card"><h3>No Advertising</h3><p>Do not promote other servers or services in our network.</p></div>
-    </div>
-</section>
+    // Falling Black Dots Effect
+    (function() {
+      const canvas = document.getElementById('falling-dots');
+      const ctx = canvas.getContext('2d');
+      let width = window.innerWidth;
+      let height = window.innerHeight;
+      let dots = [];
+      const DOTS_COUNT = 60;
 
-<section id="faq">
-    <h2 class="section-title">Frequently Asked</h2>
-    <div class="content-grid">
-        <div class="info-card"><h3>How to join?</h3><p>Copy the IP: arcademc.networkindia.com and add it to your server list.</p></div>
-        <div class="info-card"><h3>What version?</h3><p>We officially support 1.20.4, but older versions may work.</p></div>
-        <div class="info-card"><h3>Is it free?</h3><p>Yes! Our network is free to play for everyone.</p></div>
-    </div>
-</section>
+      function resize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+      }
+      window.addEventListener('resize', resize);
+      resize();
 
-<footer style="text-align:center;padding:80px 20px;color:#455a64;font-size:12px;">
-© 2026 ARCADE MC NETWORK | ALL RIGHTS RESERVED<br>
-NOT AN OFFICIAL MINECRAFT PRODUCT
-</footer>
+      function createDot() {
+        return {
+          x: Math.random() * width,
+          y: Math.random() * -height,
+          r: Math.random() * 3 + 2,
+          speed: Math.random() * 1.5 + 0.5,
+          alpha: Math.random() * 0.3 + 0.4
+        };
+      }
 
-<script>
-function showPage(id, el){
-    document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
-    document.querySelectorAll("nav a").forEach(a=>a.classList.remove("active"));
-    document.getElementById(id).classList.add("active");
-    el.classList.add("active");
-    window.scrollTo(0,0);
-}
+      function initDots() {
+        dots = [];
+        for (let i = 0; i < DOTS_COUNT; i++) {
+          dots.push(createDot());
+        }
+      }
 
-function copyIP(){
-    navigator.clipboard.writeText("arcademc.networkindia.com");
-    alert("Server IP Copied!");
-}
-</script>
+      function drawDots() {
+        ctx.clearRect(0, 0, width, height);
+        dots.forEach(dot => {
+          ctx.beginPath();
+          ctx.arc(dot.x, dot.y, dot.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(0, 0, 0, ${dot.alpha})`;
+          ctx.fill();
+          dot.y += dot.speed;
+          if (dot.y > height) {
+            dot.y = Math.random() * -height;
+            dot.x = Math.random() * width;
+          }
+        });
+        requestAnimationFrame(drawDots);
+      }
 
+      initDots();
+      drawDots();
+    })();
+  </script>
 </body>
 </html>
